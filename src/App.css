@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,24 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.current-message{
+  background-color: #aaa;
+  border: solid #aaa;
+}
+
+.current-answer{
+  background-color: black;
+  color: #fff;
+  border: solid #aaa;
+}
+.container{
+  background-color: #aaa;
+  border: solid #aaa;
+}
+.loading{
+  background-color: black;
+  color: #fff;
+  border: solid #aaa;
 }
