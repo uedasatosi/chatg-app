@@ -123,22 +123,35 @@ const Chat = () => {
       alert("何やってんだお前ええええ");
       return;
   }
+  function App() {
+    const [count, setCount] = useState(0);
+  }
   
   const li = document.createElement("li");
   const div = document.createElement("div");
   const p = document.createElement("p");
+  const h1 = document.createElement("h1")
   p.textContent = text;
   const button = document.createElement("button");
     button.textContent = "不適切";
+    const buttonn = document.createElement("button");
+    buttonn.textContent = "Good";
 
     //完了ボタンが押されたときの処理を行う
     button.addEventListener("click",() =>{
       const deleteTarget = button.closest("li");
       document.getElementById("task-list").removeChild(deleteTarget);
   });
+  buttonn.addEventListener("click",() =>{
+    App =()=> setCount(count + 1)
+    const number = setCount.value
+});
+h1.textContent = number;
 
     div.appendChild(p);
     div.appendChild(button);
+    div.appendChild(button);
+    div.appendChild(h1);
     li.appendChild(div);
     document.getElementById("task-list").appendChild(li);
   };
