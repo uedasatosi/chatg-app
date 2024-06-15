@@ -115,41 +115,33 @@ const Chat = () => {
   } );
 
   //onXlickAdd関数(コメントボタンが押されたときの機能）を定義
-const onClickAdd = () =>{
-  const textEl = document.getElementById("add-text");
-  const text = textEl.value;
-  textEl.value = "";
-
-  if(text === ""){
-    alert("何やってんだお前ええええ");
-    return;
+  const onClickAdd = () => {
+    const textEl = document.getElementById("add-text");
+    const text = textEl.value;
+    textEl.value = "";
+    if(text === ""){
+      alert("何やってんだお前ええええ");
+      return;
   }
-  //HTMLにタグを作って受け取ったテキストを表示
+  
   const li = document.createElement("li");
   const div = document.createElement("div");
   const p = document.createElement("p");
   p.textContent = text;
   const button = document.createElement("button");
-  button.textContent = "bad";
+    button.textContent = "不適切";
 
-//完了ボタンが押されたときの処理を行う
-  button.addEventListener("click",() =>{
-    const deleteTarget = button.closest("li");
-        document.getElementById("task-list").removeChild(deleteTarget);
-    });
-    // function App() {
-    //   const [count, setCount] = useState(0); // クリック回数を管理するステート
-    
-    //   const handleClick = () => {
-    //     setCount(count + 1); // クリック回数をインクリメント
-    //   };
-    //   document.getElementById("task-list").removeChild(handleClick);
-  div.appendChild(p);
-  div.appendChild(button);
-  li.appendChild(div);
-  document.getElementById("task-list").appendChild(li);
-};
-document.getElementById("add-button").addEventListener("click",() => onClickAdd());
+    //完了ボタンが押されたときの処理を行う
+    button.addEventListener("click",() =>{
+      const deleteTarget = button.closest("li");
+      document.getElementById("task-list").removeChild(deleteTarget);
+  });
+
+    div.appendChild(p);
+    div.appendChild(button);
+    li.appendChild(div);
+    document.getElementById("task-list").appendChild(li);
+  };
 
 
   // 回答用のフォームの表示
@@ -185,16 +177,15 @@ document.getElementById("add-button").addEventListener("click",() => onClickAdd(
       <div>
       <table>
         <th>
-        <input type="text" placeholder="コメントの入力" id="add-text"></input>
+        <input type="text" placeholder="コメントの入力" id="add-text"/>
         </th>
         <th> 
-        <button id="add-button">追加</button>
+        <button onClick={onClickAdd} id="add-button">追加</button>
         </th>
       </table>
       </div>
       <div className='containers'>
         <ul id="task-list"></ul>
-        <p>いいね数: {count}</p>
      </div>
     </div>
   );
