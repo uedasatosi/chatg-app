@@ -1,6 +1,6 @@
 import React,{ useCallback, useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import {chatcoler} from './chat.css';
+import'./chat.css';
  
 const API_URL = 'https://api.openai.com/v1/';
 const MODEL = 'gpt-3.5-turbo';
@@ -30,7 +30,7 @@ const Chat = () => {
         'content': message,
       }
     ];
- 
+
     // 会話の記録(直前のチャット内容の追加)
     setConversation( [ ...conversation, ...newConversation ] );
  
@@ -159,8 +159,17 @@ h1.textContent = number;
 
   // 回答用のフォームの表示
   return (
+    
     <div className='container'>
-      <form className='chat-form' onSubmit={ handleSubmit }>
+      <nav>
+        <ul>
+        <li><a href='#chats'>Chat</a></li>
+        <li><a href='#task-list'>comments</a></li>
+          <li><a href=''>game1</a></li>
+          <li><a href=''>game2</a></li>
+        </ul>
+      </nav>
+      <form className='chat-form' onSubmit={ handleSubmit } id='chats'>
         <label>
           <textarea
             className='message'
