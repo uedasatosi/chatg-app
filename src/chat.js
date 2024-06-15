@@ -109,10 +109,49 @@ const Chat = () => {
               }
           </p>
         </div>
+        
       </div>
     )
   } );
- 
+
+  //onXlickAdd関数(コメントボタンが押されたときの機能）を定義
+const onClickAdd = () =>{
+  const textEl = document.getElementById("add-text");
+  const text = textEl.value;
+  textEl.value = "";
+
+  if(text === ""){
+    alert("何やってんだお前ええええ");
+    return;
+  }
+  //HTMLにタグを作って受け取ったテキストを表示
+  const li = document.createElement("li");
+  const div = document.createElement("div");
+  const p = document.createElement("p");
+  p.textContent = text;
+  const button = document.createElement("button");
+  button.textContent = "bad";
+
+//完了ボタンが押されたときの処理を行う
+  button.addEventListener("click",() =>{
+    const deleteTarget = button.closest("li");
+        document.getElementById("task-list").removeChild(deleteTarget);
+    });
+    // function App() {
+    //   const [count, setCount] = useState(0); // クリック回数を管理するステート
+    
+    //   const handleClick = () => {
+    //     setCount(count + 1); // クリック回数をインクリメント
+    //   };
+    //   document.getElementById("task-list").removeChild(handleClick);
+  div.appendChild(p);
+  div.appendChild(button);
+  li.appendChild(div);
+  document.getElementById("task-list").appendChild(li);
+};
+document.getElementById("add-button").addEventListener("click",() => onClickAdd());
+
+
   // 回答用のフォームの表示
   return (
     <div className='container'>
@@ -143,6 +182,20 @@ const Chat = () => {
           answer={ answer }
         />
       ) }
+      <div>
+      <table>
+        <th>
+        <input type="text" placeholder="コメントの入力" id="add-text"></input>
+        </th>
+        <th> 
+        <button id="add-button">追加</button>
+        </th>
+      </table>
+      </div>
+      <div className='containers'>
+        <ul id="task-list"></ul>
+        <p>いいね数: {count}</p>
+     </div>
     </div>
   );
 }
