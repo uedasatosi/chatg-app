@@ -4,7 +4,7 @@ import {chatcoler} from './chat.css';
  
 const API_URL = 'https://api.openai.com/v1/';
 const MODEL = 'gpt-3.5-turbo';
-const API_KEY = ENV[""]
+const API_KEY = process.env.API_KEY;
 const Chat = () => {
   // メッセージの状態管理用のステート
   const [ message, setMessage ] = useState( '' );
@@ -113,8 +113,8 @@ const Chat = () => {
       </div>
     )
   } );
-
-  //onXlickAdd関数(コメントボタンが押されたときの機能）を定義
+//ここまで自分が作った通り
+  //onClickAdd関数(コメントボタンが押されたときの機能）を定義
 const onClickAdd = () =>{
   const textEl = document.getElementById("add-text");
   const text = textEl.value;
@@ -194,7 +194,7 @@ document.getElementById("add-button").addEventListener("click",() => onClickAdd(
       </div>
       <div className='containers'>
         <ul id="task-list"></ul>
-        <p>いいね数: {count}</p>
+        {/* <p>いいね数: {count}</p> */}
      </div>
     </div>
   );
