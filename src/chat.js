@@ -4,7 +4,7 @@ import {chatcoler} from './chat.css';
  
 const API_URL = 'https://api.openai.com/v1/';
 const MODEL = 'gpt-3.5-turbo';
- 
+const API_KEY = ENV[""]
 const Chat = () => {
   // メッセージの状態管理用のステート
   const [ message, setMessage ] = useState( '' );
