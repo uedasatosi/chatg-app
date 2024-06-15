@@ -1,6 +1,6 @@
 import React,{ useCallback, useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import chatcoler from './App.css'
+import {chatcoler} from './App.css'
  
 const API_URL = 'https://api.openai.com/v1/';
 const MODEL = 'gpt-3.5-turbo';
