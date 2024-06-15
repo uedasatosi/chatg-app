@@ -1,4 +1,4 @@
-import React,{ useCallback, useEffect, useState, useRef } from 'react';
+import React,{ useCallback, useEffect, useState, useRef , number} from 'react';
 import axios from 'axios';
 import'./chat.css';
  
@@ -114,6 +114,12 @@ const Chat = () => {
     )
   } );
 
+  const [count,setCount] =useState(0);     
+    const onClickcount = () =>{
+      setCount(count +1);
+      number = setCount.value;
+    };
+
   //onXlickAdd関数(コメントボタンが押されたときの機能）を定義
   const onClickAdd = () => {
     const textEl = document.getElementById("add-text");
@@ -123,40 +129,41 @@ const Chat = () => {
       alert("何やってんだお前ええええ");
       return;
   }
-  function App() {
-    const [count, setCount] = useState(0);
-  }
   
   const li = document.createElement("li");
   const div = document.createElement("div");
   const p = document.createElement("p");
-  const h1 = document.createElement("h1")
   p.textContent = text;
   const button = document.createElement("button");
     button.textContent = "不適切";
-    const buttonn = document.createElement("button");
-    buttonn.textContent = "Good";
-
+  // const btn = document.createElement("button");
+  //  btn.textContent = "Good"; 
+    
     //完了ボタンが押されたときの処理を行う
     button.addEventListener("click",() =>{
       const deleteTarget = button.closest("li");
       document.getElementById("task-list").removeChild(deleteTarget);
   });
-  buttonn.addEventListener("click",() =>{
-    App =()=> setCount(count + 1)
-    const number = setCount.value
-});
-h1.textContent = number;
+  //  btn.onClick = ()=> onClickcount;
+  //  let number = onClickcount.value;
+  //  const h1 = document.createElement("button");
+  //  h1.textContent = number;
+
+
+  // button.addEventListener("click",()=>{
+  //   number = onClickcount;
+  // })
 
     div.appendChild(p);
+    // div.appendChild(btn);
     div.appendChild(button);
-    div.appendChild(button);
-    div.appendChild(h1);
     li.appendChild(div);
     document.getElementById("task-list").appendChild(li);
+      
   };
+  
 
-
+  
   // 回答用のフォームの表示
   return (
     
@@ -207,7 +214,7 @@ h1.textContent = number;
       </table>
       </div>
       <div className='containers'>
-        <ul id="task-list"></ul>
+        <ul id="task-list" ><button onClick={onClickcount}>この質問へのいいね数　{count}</button></ul>
      </div>
     </div>
   );
