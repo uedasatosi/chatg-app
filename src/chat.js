@@ -1,6 +1,7 @@
 import React,{ useCallback, useEffect, useState, useRef , number} from 'react';
 import axios from 'axios';
 import'./chat.css';
+
  
 const API_URL = 'https://api.openai.com/v1/';
 const MODEL = 'gpt-3.5-turbo';
@@ -114,6 +115,7 @@ const Chat = () => {
     )
   } );
 
+
   const [count,setCount] =useState(0);     
     const onClickcount = () =>{
       setCount(count +1);
@@ -161,6 +163,19 @@ const Chat = () => {
     document.getElementById("task-list").appendChild(li);
       
   };
+  const onClickbinding = ()=> {
+        const lentex = document.getElementById("question");
+    const texlen = lentex;
+    console.log("type>>"+texlen.value);
+    const textlen = texlen.value
+
+    if(textlen.length >30){
+      alert("君の様な文の長いガキは嫌いだよ");
+       return;
+
+    }
+  }
+
   
 
   
@@ -186,10 +201,11 @@ const Chat = () => {
             onChange={ e => {
               setMessage( e.target.value ) ;
             } }
+            id='question'
           />
         </label>
         <div className='submit'>
-          <button type="submit">質問する</button>
+          <button type="submit" onClick={onClickbinding}>質問する</button>
         </div>
       </form>
       { loading && (
