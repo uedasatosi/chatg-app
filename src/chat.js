@@ -163,6 +163,7 @@ const Chat = () => {
     document.getElementById("task-list").appendChild(li);
       
   };
+
   const onClickbinding = ()=> {
         const lentex = document.getElementById("question");
     const texlen = lentex;
@@ -171,8 +172,8 @@ const Chat = () => {
 
     if(textlen.length >30){
       alert("君の様な文の長いガキは嫌いだよ");
+      
        return;
-
     }
   }
 
