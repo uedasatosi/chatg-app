@@ -1,4 +1,4 @@
-import React,{ useCallback, useEffect, useState, useRef ,} from 'react';
+import React,{ useCallback, useEffect, useState, useRef , useContext} from 'react';
 import axios from 'axios';
 import'./chat.css';
 
@@ -172,7 +172,8 @@ const Chat = () => {
 
     if(textlen.length >30){
       alert("君の様な文の長いガキは嫌いだよ");
-      
+      const deleteTarget = button.closest("div");
+      document.getElementById("question").removeChild(deleteTarget);
        return;
     }
   }
@@ -184,12 +185,14 @@ const Chat = () => {
   return (
     
     <div className='container'>
+      
       <nav>
         <ul class="main-nav">
         <li><a href='#chats'>Chat</a></li>
         <li><a href='#task-list'>comments</a></li>
           <li><a href=''>game1</a></li>
           <li><a href=''>game2</a></li>
+          <li><a href=''>game3</a></li>
         </ul>
       </nav>
       <form className='chat-form' onSubmit={ handleSubmit } id='chats'>
@@ -204,9 +207,10 @@ const Chat = () => {
             } }
             id='question'
           />
+          <button onClick={onClickbinding}>判定</button>
         </label>
         <div className='submit'>
-          <button type="submit" onClick={onClickbinding}>質問する</button>
+          <button type="submit" id='question'>質問する</button>
         </div>
       </form>
       { loading && (
