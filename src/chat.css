@@ -53,16 +53,20 @@
 .current-answer{
   color: #fff;
   background-color: black;
-  border: aqua;
+  border:solid aqua;
 }
-.container{
+.containers{
   background-color: #aaa ;
-  border: black;
+  border: solid black;
 }
 .loading{
   color: #fff;
   background-color: black;
-  border: aqua;
+  border: solid aqua;
+}
+
+.container{
+  background-color: hsl(125, 90%, 23%);
 }
 nav{
   color: brown;
