@@ -1,4 +1,4 @@
-import React,{ useCallback, useEffect, useState, useRef , number} from 'react';
+import React,{ useCallback, useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import'./chat.css';
 
@@ -119,7 +119,7 @@ const Chat = () => {
   const [count,setCount] =useState(0);     
     const onClickcount = () =>{
       setCount(count +1);
-      number = setCount.value;
+      // number = setCount.value;
     };
 
   //onClickAdd関数(コメントボタンが押されたときの機能）を定義
