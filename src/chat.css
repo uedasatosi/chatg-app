@@ -48,7 +48,7 @@
 }
 .current-message{
   background-color: #aaa ;
-  border: black;
+  border: solid black;
 }
 .current-answer{
   color: #fff;

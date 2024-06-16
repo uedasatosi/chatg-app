@@ -1,4 +1,4 @@
-import React,{ useCallback, useEffect, useState, useRef } from 'react';
+import React,{ useCallback, useEffect, useState, useRef ,} from 'react';
 import axios from 'axios';
 import'./chat.css';
 
@@ -119,7 +119,7 @@ const Chat = () => {
   const [count,setCount] =useState(0);     
     const onClickcount = () =>{
       setCount(count +1);
-      // number = setCount.value;
+    const  number = setCount.value;
     };
 
   //onClickAdd関数(コメントボタンが押されたときの機能）を定義
@@ -163,6 +163,7 @@ const Chat = () => {
     document.getElementById("task-list").appendChild(li);
       
   };
+
   const onClickbinding = ()=> {
         const lentex = document.getElementById("question");
     const texlen = lentex;
@@ -171,8 +172,8 @@ const Chat = () => {
 
     if(textlen.length >30){
       alert("君の様な文の長いガキは嫌いだよ");
+      
        return;
-
     }
   }
 
