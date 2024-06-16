@@ -5,7 +5,7 @@ import'./chat.css';
  
 const API_URL = 'https://api.openai.com/v1/';
 const MODEL = 'gpt-3.5-turbo';
-const API_KEY = process.env.API_KEY;
+const API_KEY = 'REACT_APP_API_KEY';
 const Chat = () => {
   // メッセージの状態管理用のステート
   const [ message, setMessage ] = useState( '' );
@@ -211,7 +211,7 @@ const Chat = () => {
       </form>
       { loading && (
         <div className='loading'>
-          <p>回答中...</p>
+          <p class="font">回答中...</p>
         </div>
       ) }
       { answer && !loading && (

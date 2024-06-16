@@ -46,23 +46,26 @@
 .main-nav li{
   margin-left: 30px;
 }
+.font{
+  font-weight: bold;
+}
 .current-message{
-  background-color: #aaa ;
-  border: solid black;
+  background-color: #92de6f ;
+  border: solid rgb(205, 196, 74);
 }
 .current-answer{
   color: #fff;
-  background-color: black;
-  border:solid aqua;
+  background-color: rgb(134, 97, 43);
+  border:solid rgb(235, 196, 25);
 }
 .containers{
-  background-color: #aaa ;
+  background-color: #9eb52c ;
   border: solid black;
 }
 .loading{
-  color: #fff;
-  background-color: black;
-  border: solid aqua;
+  color: black;
+  background-color: yellowgreen;
+  border: solid greenyellow;
 }
 
 .container{
@@ -70,7 +73,7 @@
 }
 nav{
   color: brown;
-  background-color: black;
+  background-color: burlywood;
   border: solid #aaa;
   width: 100%;
   height: 15%;
@@ -82,7 +85,7 @@ table{
   }
 
 h2{
-  color: blue;
+  color: rgb(57, 9, 49);
 }
 
 button[type="submit"]{
