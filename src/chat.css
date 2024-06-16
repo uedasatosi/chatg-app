@@ -76,3 +76,11 @@ table{
   border: solid black;
   height: 15%;
   }
+
+h2{
+  color: blue;
+}
+
+button[type="submit"]{
+  border: 1px solid skyblue;
+}

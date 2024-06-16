@@ -122,7 +122,7 @@ const Chat = () => {
       number = setCount.value;
     };
 
-  //onXlickAdd関数(コメントボタンが押されたときの機能）を定義
+  //onClickAdd関数(コメントボタンが押されたときの機能）を定義
   const onClickAdd = () => {
     const textEl = document.getElementById("add-text");
     const text = textEl.value;
@@ -230,7 +230,7 @@ const Chat = () => {
       </table>
       </div>
       <div className='containers'>
-        <ul id="task-list" ><button onClick={onClickcount}>この質問へのいいね数　{count}</button></ul>
+        <ul id="task-list" ><button onClick={onClickcount}>この質問へのいいね数{count}</button></ul>
      </div>
     </div>
   );
