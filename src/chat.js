@@ -170,11 +170,14 @@ const Chat = () => {
     console.log("type>>"+texlen.value);
     const textlen = texlen.value
 
-    if(textlen.length >30){
+    if(textlen.length > 30){
       alert("君の様な文の長いガキは嫌いだよ");
-      const deleteTarget = button.closest("div");
-      document.getElementById("question").removeChild(deleteTarget);
        return;
+    }else{
+      const button = document.createElement("button");
+      button.textContent = "質問する";
+      div.appendChild(button);
+      document.getElementById("submit").appendChild(li);
     }
   }
 
@@ -207,10 +210,11 @@ const Chat = () => {
             } }
             id='question'
           />
-          <button onClick={onClickbinding}>判定</button>
+          
         </label>
-        <div className='submit'>
-          <button type="submit" id='question'>質問する</button>
+        <div className='submit' id='submit'>
+        {/* <button onClick={onClickbinding}>判定</button>
+          <button type="submit" id='question'>質問する</button> */}
         </div>
       </form>
       { loading && (
