@@ -5,7 +5,7 @@ import'./chat.css';
  
 const API_URL = 'https://api.openai.com/v1/';
 const MODEL = 'gpt-3.5-turbo';
-const API_KEY = process.env.API_KEY;
+const API_KEY = 'REACT_APP_API_KEY';
 const Chat = () => {
   // メッセージの状態管理用のステート
   const [ message, setMessage ] = useState( '' );
@@ -122,7 +122,7 @@ const Chat = () => {
     const  number = setCount.value;
     };
 
-  //onXlickAdd関数(コメントボタンが押されたときの機能）を定義
+  //onClickAdd関数(コメントボタンが押されたときの機能）を定義
   const onClickAdd = () => {
     const textEl = document.getElementById("add-text");
     const text = textEl.value;
@@ -211,7 +211,7 @@ const Chat = () => {
       </form>
       { loading && (
         <div className='loading'>
-          <p>回答中...</p>
+          <p class="font">回答中...</p>
         </div>
       ) }
       { answer && !loading && (
@@ -231,7 +231,7 @@ const Chat = () => {
       </table>
       </div>
       <div className='containers'>
-        <ul id="task-list" ><button onClick={onClickcount}>この質問へのいいね数　{count}</button></ul>
+        <ul id="task-list" ><button onClick={onClickcount}>この質問へのいいね数{count}</button></ul>
      </div>
     </div>
   );
