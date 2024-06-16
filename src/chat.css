@@ -48,21 +48,21 @@
 }
 .current-message{
   background-color: #aaa ;
-  border: black;
+  border: solid black;
 }
 .current-answer{
   color: #fff;
   background-color: black;
-  border: aqua;
+  border:solid aqua;
 }
-.container{
+.containers{
   background-color: #aaa ;
-  border: black;
+  border: solid black;
 }
 .loading{
   color: #fff;
   background-color: black;
-  border: aqua;
+  border: solid aqua;
 }
 nav{
   color: brown;
