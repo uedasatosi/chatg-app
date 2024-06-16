@@ -169,7 +169,7 @@ const Chat = () => {
     
     <div className='container'>
       <nav>
-        <ul>
+        <ul class="main-nav">
         <li><a href='#chats'>Chat</a></li>
         <li><a href='#task-list'>comments</a></li>
           <li><a href=''>game1</a></li>
