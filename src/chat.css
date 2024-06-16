@@ -36,7 +36,16 @@
     transform: rotate(360deg);
   }
 } */
-
+.main-nav{
+  display: flex;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin: 50px 20px 0 20px;
+  list-style: none;
+}
+.main-nav li{
+  margin-left: 30px;
+}
 .current-message{
   background-color: #aaa ;
   border: black;
@@ -65,4 +74,5 @@ nav{
 table{
   background-color: #aaa;
   border: solid black;
-}
+  height: 15%;
+  }
